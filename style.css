@@ -1,0 +1,268 @@
+@font-face {
+    font-family: Burbank;
+    src: url(assets/fonts/BurbankBigCondensed-Black.otf);
+}
+
+body {
+    color: whitesmoke;
+    font-family: Burbank;
+    background-image: url("assets/images/mainbg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Top settings */
+h1 {
+    font-size: 2.5em;
+    text-align: center;
+}
+#settingsContainer {
+    padding: 25px;
+}
+#settingsContainer * {
+    display: block;
+    margin: auto;
+}
+#settingsContainer input {
+    width: 175px;
+    height: 25px;
+    border: none;
+    border-radius: 10px;
+    background-color: lightblue;
+    padding: 5px;
+    font-family: Burbank;
+    font-size: 1.3em;
+    transition: 0.25s;
+    margin-bottom: 25px;
+}
+#settingsContainer input:focus {
+    outline: none;
+    color: white;
+    background-color: rgb(0, 173, 231);
+}
+#settingsContainer h2 {
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 1.3em;
+    text-decoration: underline;
+}
+
+/* Background selector */
+#backgroundSelector {
+    width: 90%;
+    border: 2px solid rgb(0, 173, 231);;
+    margin: 10px auto;
+    overflow-x: scroll;
+    display: flex;
+}
+#backgroundSelector img {
+    margin: 5px;
+    cursor: pointer;
+}
+
+/* Cosmetics part */
+.h2title {
+    font-size: 2em;
+    text-align: center;
+    cursor: pointer;
+    width: 175px;
+    margin: 20px auto;
+    text-decoration: underline;
+}
+
+#cosmeticsContainer {
+    width: 90%;
+    border: 2px solid rgb(0, 173, 231);;
+    margin: 25px auto;
+}
+
+#imageSelector {
+    display: flex;
+    margin-bottom: 5px;
+}
+#typeSelector {
+    display: none;
+    flex-wrap: wrap;
+    margin-bottom: 5px;
+}
+
+#filterCosmetics {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#filterCosmetics * {
+    width: 100%;
+    background-color: lightblue;
+    border: none;
+    font-family: Burbank;
+    font-size: 1.3em;
+    transition: 0.25s;
+    display: block;
+    margin: 5px;
+    padding: 5px;
+}
+
+#searchBar {
+    height: 22px;
+}
+
+#searchBar:focus, 
+#rarityFilter:focus {
+    outline: none;
+    color: white;
+    background-color: rgb(0, 173, 231);
+}
+
+#imageSelector .imageSelectorBtn,
+#typeSelector .typeSelectorBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 35px;
+    border: 1px solid black;
+    color: black;
+    background-color: lightblue;
+    cursor: pointer;
+    font-size: 1.3em;
+}
+.typeSelectorBtn {
+    flex: 1 1 100px;
+}
+
+.selectorSelectedOption {
+    transition: 0.2s;
+    color: white !important;
+    background-color: rgb(0, 173, 231) !important;
+}
+
+#cosmetics {
+    width: 100%;
+    height: 500px;
+    max-height: 500px;
+    overflow-y: scroll;
+    justify-content: space-around;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    position: relative;
+}
+
+#cosmetics img {
+    width: 128px;
+    cursor: pointer;
+}
+
+#loadMoreBtn {
+    width: 200px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    background-color: lightblue;
+    display: block;
+    margin: 50px auto 25px;
+    cursor: pointer;
+    font-family: Burbank;
+    font-size: 1.5em;
+    transition: 0.25s;
+}
+
+/* Position settings */
+#controllContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 50px;
+}
+.controllPanel {
+    font-size: 20px;
+    text-align: center;
+}
+.controllTable {
+    display: block;
+    margin: auto;
+}
+.up, .left, .right, .down, .center {
+    width: 32px;
+    height: 32px;
+    font-size: 20px;
+    background-color: white;
+    cursor: pointer;
+    padding: 0px;
+    margin: 0px;
+}
+.up img, .left img, .right img, .down img, .center img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* Canvas */
+canvas {
+    width: 60%;
+    border: 1px solid black;
+    display: block;
+    margin: auto;
+}
+
+/* Download button */
+#downloadBtn {
+    width: 200px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    background-color: lightblue;
+    display: block;
+    margin: 50px auto 25px;
+    cursor: pointer;
+    font-family: Burbank;
+    font-size: 1.5em;
+    transition: 0.25s;
+}
+#downloadBtn:hover {
+    color: white;
+    background-color: rgb(0, 173, 231);
+}
+
+/* Rarities */
+.Common { background-color: #797979}
+.Uncommon { background-color: green}
+.Rare { background-color: #2082C1}
+.Epic { background-color: purple}
+.Legendary { background-color: #fa820a}
+.Mythic { background-color: #FFDE61}
+.Transcendent { background-color: #00B5F6}
+.CUBESeries { background-color: #cc0069}
+.DCUSeries { background-color: #001c80}
+.FrozenSeries { background-color: #afd7ff}
+.CreatorCollabSeries { background-color: #1be2e4}
+.LavaSeries { background-color: #e03400}
+.MarvelSeries { background-color: #be0003}
+.PlatformSeries { background-color: #3730FF}
+.ShadowSeries { background-color: #eeeeee}
+.SlurpSeries { background-color: #00b3b0}
+.ColumbusSeries { background-color: #ffaf00}
+
+
+@media only screen and (max-width: 775px) {
+    #filterCosmetics {
+        flex-direction: column;
+    }
+    #searchBar {
+        width: 97.5%;
+    }
+    #rarityFilter {
+        width: 99%;
+    }
+    #cosmetics img {
+        width: 64px;
+    }
+    canvas {
+        width: 95%;
+    }
+}

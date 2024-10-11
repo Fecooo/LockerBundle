@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fortnite Locker Bundle Creator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Fortnite Locker Bundle Creator</h1>
+
+    <h2 class="h2title" id="settingsText" onclick="toggleContent(1)">Settings ▼</h2>
+    <div id="settingsContainer">
+        <h2>Display name</h2>
+        <input type="text" id="txtName" oninput="loadCanvas()">
+
+        <h2>Background</h2>
+        <div id="backgroundSelector">
+            <img src="https://drive.google.com/thumbnail?id=16_e4ifIpZKZ6qfI8aw6D5biHLnpGgDzn" onclick="selectBackground(this)">
+            <img src="https://drive.google.com/thumbnail?id=1xC2uKv3Wd1XyTvtPf-onRRbIrjVRCnJy" onclick="selectBackground(this)">
+            <img src="https://drive.google.com/thumbnail?id=1EI5Aqm0DfhzgmeOz4PRfwnfW5YgtjAN_" onclick="selectBackground(this)">
+            <img src="https://drive.google.com/thumbnail?id=1nIqPcZnNlipepHNqEvZ3e_0Ug55_Qt64" onclick="selectBackground(this)">
+            <img src="https://drive.google.com/thumbnail?id=1Gq66do7f6WByFFft-y60Fr12ojaVvN12" onclick="selectBackground(this)">
+            <img src="https://drive.google.com/thumbnail?id=1_bi1HWxb4xABrZ0FJ4oAXmEDmUEQWn_m" onclick="selectBackground(this)">
+            <img src="https://drive.google.com/thumbnail?id=19_d6lhdgFHozjwIgxySCiN_0D_oLD46s" onclick="selectBackground(this)">
+            <img src="https://drive.google.com/thumbnail?id=1wEdkRLCsI-LHtXjltb6Yrpfj2150k_0W" onclick="selectBackground(this)">
+            <img src="https://drive.google.com/thumbnail?id=1aaWVl6VPy0IDvDZlj3om4W97WcwWaOIu" onclick="selectBackground(this)">
+            <img src="https://drive.google.com/thumbnail?id=1RyrJKdOsxXBCwHHSJv1ADPgd1dfBey85" onclick="selectBackground(this)">
+            <img src="https://drive.google.com/thumbnail?id=1wOhs0_71keFMco9owif39E_eNiMZ5ZJF" onclick="selectBackground(this)">
+            <img src="https://drive.google.com/thumbnail?id=1KEtZNC9cDfFmMk7Pk1kxwGrkv5MV0Rfx" onclick="selectBackground(this)">
+            <img src="https://drive.google.com/thumbnail?id=12Z00DIoSHySL-6zGJdjsR4x0bShVkZqS" onclick="selectBackground(this)">
+            <img src="https://drive.google.com/thumbnail?id=1VT43jdzDBYwEOmH4qBacXNxO_gCwtksp" onclick="selectBackground(this)">
+            <img src="https://drive.google.com/thumbnail?id=1ha5TPOHtYaYCn9d5zzqJ1Sq5guk3FGEE" onclick="selectBackground(this)">
+            <img src="https://drive.google.com/thumbnail?id=1_jb6GksmuOxuSa3HdBOmYEClPFmlnU-q" onclick="selectBackground(this)">
+            <img src="https://drive.google.com/thumbnail?id=1VDyGCepkNRKLLV00xWIF35Gq_oS7TFa8" onclick="selectBackground(this)">
+        </div>
+    </div>
+
+    <h2 class="h2title" id="cosmeticsText" onclick="toggleContent(2)">Cosmetics ▼</h2>
+    <div id="cosmeticsContainer">
+        <div id="imageSelector">
+            <div class="imageSelectorBtn selectorSelectedOption" onclick="loadPage('outfit'); changeImageType('outfit', this)">Outfit</div>
+            <div class="imageSelectorBtn" onclick="changeImageType('first', this)">First</div>
+            <div class="imageSelectorBtn" onclick="changeImageType('second', this)">Second</div>
+            <div class="imageSelectorBtn" onclick="changeImageType('third', this)">Third</div>
+            <div class="imageSelectorBtn" onclick="changeImageType('fourth', this)">Fourth</div>
+        </div>
+
+        <div id="typeSelector">
+            <div class="typeSelectorBtn" onclick="loadPage('backpack')">Back Blings</div>
+            <div class="typeSelectorBtn" onclick="loadPage('pickaxe')">Pickaxes</div>
+            <div class="typeSelectorBtn" onclick="loadPage('glider')">Gliders</div>
+            <div class="typeSelectorBtn" onclick="loadPage('wrap')">Wraps</div>
+            <div class="typeSelectorBtn" onclick="loadPage('emote')">Emotes</div>
+            <div class="typeSelectorBtn" onclick="loadPage('loadingscreen')">Loadings</div>
+            <div class="typeSelectorBtn" onclick="loadPage('music')">Musics</div>
+            <div class="typeSelectorBtn" onclick="loadPage('contrail')">Contrails</div>
+        </div>
+
+        <div id="filterCosmetics">
+            <input id="searchBar" type="text" oninput="filterHandle()">
+            <select name="" id="rarityFilter" oninput="filterHandle()">
+                <option value="none">-- select rarity --</option>
+                <option value="rarity-Common">Common</option>
+                <option value="rarity-Uncommon">Uncommon</option>
+                <option value="rarity-Rare">Rare</option>
+                <option value="rarity-Epic">Epic</option>
+                <option value="rarity-Legendary">Legendary</option>
+                <option value="series-CUBESeries">Dark Series</option>
+                <option value="series-DCUSeries">DC Series</option>
+                <option value="series-FrozenSeries">Frozen Series</option>
+                <option value="series-CreatorCollabSeries">Icon Series</option>
+                <option value="series-LavaSeries">Lava Series</option>
+                <option value="series-MarvelSeries">Marvel Series</option>
+                <option value="series-PlatformSeries">Gaming Series</option>
+                <option value="series-ShadowSeries">Shadow Series</option>
+                <option value="series-SlurpSeries">Slurp Series</option>
+                <option value="series-ColumbusSeries">Star Wars Series</option>
+            </select>
+        </div>
+
+        <div id="cosmetics"></div>
+
+        <!-- <button type="button" id="loadMoreBtn" onclick="loadMore()">Load More</button> -->
+    </div>
+    
+    
+    <h2 class="h2title" id="controllText" onclick="toggleContent(3)">Positions ▼</h2>
+    <div id="controllContainer">
+        <div class="controllPanel">
+            <p>Outfit Image</p>
+            <table class="controllTable">
+                <tr>
+                    <td></td>
+                    <td class="up" onclick="changePosition('outfit', 'Y', 'minus')">
+                        <img src="assets/images/arrows/arrow-up.png" alt="">
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="left" onclick="changePosition('outfit', 'X', 'minus')">
+                        <img src="assets/images/arrows/arrow-left.png" alt="">
+                    </td>
+                    <td class="center">
+                        <img src="assets/images/arrows/center.png" alt="">
+                    </td>
+                    <td class="right" onclick="changePosition('outfit', 'X', 'plus')">
+                        <img src="assets/images/arrows/arrow-right.png" alt="">
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="down" onclick="changePosition('outfit', 'Y', 'plus')">
+                        <img src="assets/images/arrows/arrow-down.png" alt="">
+                    </td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="controllPanel">
+            <p>First Image</p>
+            <table class="controllTable">
+                <tr>
+                    <td></td>
+                    <td class="up" onclick="changePosition('first', 'Y', 'minus')">
+                        <img src="assets/images/arrows/arrow-up.png" alt="">
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="left" onclick="changePosition('first', 'X', 'minus')">
+                        <img src="assets/images/arrows/arrow-left.png" alt="">
+                    </td>
+                    <td class="center">
+                        <img src="assets/images/arrows/center.png" alt="">
+                    </td>
+                    <td class="right" onclick="changePosition('first', 'X', 'plus')">
+                        <img src="assets/images/arrows/arrow-right.png" alt="">
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="down" onclick="changePosition('first', 'Y', 'plus')">
+                        <img src="assets/images/arrows/arrow-down.png" alt="">
+                    </td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="controllPanel">
+            <p>Second Image</p>
+            <table class="controllTable">
+                <tr>
+                    <td></td>
+                    <td class="up" onclick="changePosition('second', 'Y', 'minus')">
+                        <img src="assets/images/arrows/arrow-up.png" alt="">
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="left" onclick="changePosition('second', 'X', 'minus')">
+                        <img src="assets/images/arrows/arrow-left.png" alt="">
+                    </td>
+                    <td class="center">
+                        <img src="assets/images/arrows/center.png" alt="">
+                    </td>
+                    <td class="right" onclick="changePosition('second', 'X', 'plus')">
+                        <img src="assets/images/arrows/arrow-right.png" alt="">
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="down" onclick="changePosition('second', 'Y', 'plus')">
+                        <img src="assets/images/arrows/arrow-down.png" alt="">
+                    </td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="controllPanel">
+            <p>Third Image</p>
+            <table class="controllTable">
+                <tr>
+                    <td></td>
+                    <td class="up" onclick="changePosition('third', 'Y', 'minus')">
+                        <img src="assets/images/arrows/arrow-up.png" alt="">
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="left" onclick="changePosition('third', 'X', 'minus')">
+                        <img src="assets/images/arrows/arrow-left.png" alt="">
+                    </td>
+                    <td class="center">
+                        <img src="assets/images/arrows/center.png" alt="">
+                    </td>
+                    <td class="right" onclick="changePosition('third', 'X', 'plus')">
+                        <img src="assets/images/arrows/arrow-right.png" alt="">
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="down" onclick="changePosition('third', 'Y', 'plus')">
+                        <img src="assets/images/arrows/arrow-down.png" alt="">
+                    </td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="controllPanel">
+            <p>Fourth Image</p>
+            <table class="controllTable">
+                <tr>
+                    <td></td>
+                    <td class="up" onclick="changePosition('fourth', 'Y', 'minus')">
+                        <img src="assets/images/arrows/arrow-up.png" alt="">
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="left" onclick="changePosition('fourth', 'X', 'minus')">
+                        <img src="assets/images/arrows/arrow-left.png" alt="">
+                    </td>
+                    <td class="center">
+                        <img src="assets/images/arrows/center.png" alt="">
+                    </td>
+                    <td class="right" onclick="changePosition('fourth', 'X', 'plus')">
+                        <img src="assets/images/arrows/arrow-right.png" alt="">
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="down" onclick="changePosition('fourth', 'Y', 'plus')">
+                        <img src="assets/images/arrows/arrow-down.png" alt="">
+                    </td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    
+
+    <canvas id="canvas" style="border:1px solid black"></canvas>
+
+    <button id="downloadBtn" type="button" onclick="downloadImage()">Download</button>
+
+    <script src="canvas.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
