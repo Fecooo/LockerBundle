@@ -40,7 +40,6 @@ loadPage("outfit");
 function loadPage(cosmeticType) {
     document.getElementById("searchBar").value = "";
     document.getElementById("rarityFilter").value = "none";
-    //document.getElementById("loadMoreBtn").style.display = "block";
 
     currentCosmeticType = cosmeticType;
     currentIndex = 0;
@@ -114,7 +113,7 @@ function filterHandle() {
     let searchTerm = document.getElementById("searchBar").value.trim().toLowerCase();
     let selectedRarityValue = document.getElementById("rarityFilter").value == "none" ? null : document.getElementById("rarityFilter").value;
     
-    isFilterEnabled = selectedRarityValue == "none" ? false : true;
+    isFilterEnabled = (selectedRarityValue == "none" || !selectedRarityValue) && searchTerm == "" ? false : true;
 
     currentIndex = 0;
     clearCosmetics();
@@ -148,7 +147,6 @@ function clearStyleFromSelected(type) {
 function changeImageType(imageType, el) {
     document.getElementById("searchBar").value = "";
     document.getElementById("rarityFilter").value = "none";
-    //document.getElementById("loadMoreBtn").style.display = "block";
 
     currentImageType = imageType;
 
